@@ -1,10 +1,9 @@
+import re
 import csv
 import sys
-import argparse
 import urllib2
+import argparse
 from datetime import datetime
-import re
-import math
 
 def downloadData(url):
     f = urllib2.urlopen(url)
@@ -42,7 +41,6 @@ def processing(data):
 
     percent = (float(c)/float(i+1))*100
     most_popular_browser = max(browser_types)
-    print(hour_hits)
     print("Image requests account for " + str(round(percent, 2)) + "% of all requests.")
     print(b_type_name[browser_types.index(most_popular_browser)] + ' is the most popular browser with ' + str(most_popular_browser) + ' hits.')
 
